@@ -3,7 +3,9 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- 使用百分比或视窗单位 -->
     <title>💗</title>
     <style type="text/css">
         body {
@@ -130,9 +132,10 @@
 
 <body>
 <p>©️copyright by zhangshao 2024</p>
-    <canvas id="pinkboard" width="1920" height="947"></canvas>
+    <canvas id="pinkboard" style="width: 100%; height: 100vh;"></canvas>
     <div id="name">❤祝福同学在开学后金榜题名❤</div>
-    <canvas id="canvas" width="1920" height="947"></canvas>
+    <canvas id="canvas" style="width: 100%; height: 100vh;"></canvas>
+
 
     <script type="text/javascript">
 
@@ -482,7 +485,13 @@
                 render();
             }, 10);
         })(document.getElementById("pinkboard"));
+        function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
 
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
     </script>
 
 </body>
